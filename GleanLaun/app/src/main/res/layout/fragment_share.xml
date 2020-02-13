@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/text_share"
+        android:layout_width="141dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="104dp"
+        android:text="Login Page"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="298dp"
+        android:layout_height="179dp"
+        app:layout_constraintBottom_toTopOf="@+id/googleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_share"
+        tools:srcCompat="@drawable/loginpage" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleButton"
+        android:layout_width="335dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="Sign in with Google"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_dark_background"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/facebookButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:roundedCorner="true"
+        app:roundedCornerRadius="30dp"
+        app:transparentBackground="true" />
+
+    <com.shaishavgandhi.loginbuttons.FacebookButton
+        android:id="@+id/facebookButton2"
+        android:layout_width="376dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="Sign in with Facebook"
+        android:textColor="@color/cardview_dark_background"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/loginBaru"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:roundedCorner="true"
+        app:roundedCornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/loginBaru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Login Disini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
