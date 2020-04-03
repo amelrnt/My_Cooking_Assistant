@@ -13,6 +13,7 @@ public class Resep {
         return nama;
     }
 
+
     public void setNama(String nama) {
         this.nama = nama;
     }
