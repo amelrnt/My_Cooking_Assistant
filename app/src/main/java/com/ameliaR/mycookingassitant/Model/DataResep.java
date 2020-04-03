@@ -78,7 +78,7 @@ public class DataResep {
             list.add(rsp);
         }
         return list;
-    };
+    }
 
     static ArrayList<Resep> getMinuman(){
         ArrayList<Resep> list= new ArrayList<>();
@@ -90,7 +90,7 @@ public class DataResep {
             list.add(rsp);
         }
         return list;
-    };
+    }
 
     static ArrayList<Resep> getSnack(){
         ArrayList<Resep> list= new ArrayList<>();
@@ -102,5 +102,5 @@ public class DataResep {
             list.add(rsp);
         }
         return list;
-    };
+    }
 }
