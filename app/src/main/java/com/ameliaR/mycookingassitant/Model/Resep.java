@@ -5,6 +5,7 @@ public class Resep {
     String bahan;
     String cara;
     String deskripsi;
+    int foto;
 
     public Resep() {
     }
@@ -13,6 +14,13 @@ public class Resep {
         return nama;
     }
 
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
 
     public void setNama(String nama) {
         this.nama = nama;

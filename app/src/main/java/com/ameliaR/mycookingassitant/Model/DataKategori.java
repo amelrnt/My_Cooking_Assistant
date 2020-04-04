@@ -8,8 +8,8 @@ public class DataKategori {
 
     public static int fotoKategori[]= {
             R.drawable.kategori_1,
-            R.drawable.kategori_1,
-            R.drawable.kategori_1
+            R.drawable.kategori_2,
+            R.drawable.kategori_3
     };
 
     public static String namaKategori[]= {
@@ -28,6 +28,5 @@ public class DataKategori {
         }
         return list;
     }
-
 
 }
