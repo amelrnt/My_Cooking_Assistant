@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ameliaR.mycookingassitant.Model.Resep;
 import com.ameliaR.mycookingassitant.R;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,11 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Resep resep = listResep.get(position);
+
+        Glide.with(holder.itemView.getContext())
+                .load(resep.getFoto())
+                .apply(new RequestOptions().override(55,55))
+                .into(holder.fotoResep);
         holder.tvNama.setText(resep.getNama());
         holder.tvDetail.setText(resep.getDeskripsi());
     }
