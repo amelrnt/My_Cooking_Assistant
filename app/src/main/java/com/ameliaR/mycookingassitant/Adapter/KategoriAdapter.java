@@ -17,11 +17,14 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
-public class KategoriAdpter extends RecyclerView.Adapter<KategoriAdpter.ViewHolder> {
+public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHolder> {
     private ArrayList<Kategori> listKategori;
+    private onKategoriListener listener;
 
-    public KategoriAdpter(ArrayList<Kategori> listKategori) {
+    public KategoriAdapter(ArrayList<Kategori> listKategori, onKategoriListener listener) {
         this.listKategori = listKategori;
+        this.listener = listener;
+
     }
 
     @NonNull
@@ -48,6 +51,10 @@ public class KategoriAdpter extends RecyclerView.Adapter<KategoriAdpter.ViewHold
         return listKategori.size();
     }
 
+    public interface onKategoriListener{
+        void kategoriListener(int index, Kategori item);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageKategori;
         private TextView textKategori;
@@ -58,7 +65,14 @@ public class KategoriAdpter extends RecyclerView.Adapter<KategoriAdpter.ViewHold
             textKategori = itemView.findViewById(R.id.tv_kategori);
         }
 
-
+        public void bind(final int index, final Kategori item){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.kategoriListener(index,item);
+                }
+            });
+        }
 
     }
 }
