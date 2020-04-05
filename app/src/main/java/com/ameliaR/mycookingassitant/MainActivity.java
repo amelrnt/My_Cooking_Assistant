@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
         rvResep = findViewById(R.id.rv_resep);
         listKategori.addAll(DataKategori.getKategori());
 
-        rvKategori.setLayoutManager(new LinearLayoutManager(this));
+        rvKategori.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
         KategoriAdapter listKategoriAdapter = new KategoriAdapter(listKategori, this);
         rvKategori.setAdapter(listKategoriAdapter);
     }
@@ -37,7 +37,33 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
     @Override
     public void kategoriListener(int index, Kategori item) {
         //TODO bedakan view perkategori
+        if (item.getNama().equals("Makanan")){
+            viewMakanan();
+        }
+        else if(item.getNama().equals("Minuman")){
+            viewMinuman();
+        }
+        else if (item.getNama().equals("Snack")){
+            viewSnack();
+        }
+    }
+
+    public void viewMakanan(){
         listResep.addAll(DataResep.getMakanan());
+        rvResep.setLayoutManager(new LinearLayoutManager(this));
+        ResepAdapter listResepAdapter = new ResepAdapter(listResep);
+        rvResep.setAdapter(listResepAdapter);
+    }
+
+    public void viewMinuman(){
+        listResep.addAll(DataResep.getMinuman());
+        rvResep.setLayoutManager(new LinearLayoutManager(this));
+        ResepAdapter listResepAdapter = new ResepAdapter(listResep);
+        rvResep.setAdapter(listResepAdapter);
+    }
+
+    public void viewSnack(){
+        listResep.addAll(DataResep.getSnack());
         rvResep.setLayoutManager(new LinearLayoutManager(this));
         ResepAdapter listResepAdapter = new ResepAdapter(listResep);
         rvResep.setAdapter(listResepAdapter);
