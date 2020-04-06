@@ -44,6 +44,8 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
                 .apply(new RequestOptions().override(350, 550))
                 .into(holder.imageKategori);
         holder.textKategori.setText(kategori.getNama());
+
+        holder.bind(position,kategori);
     }
 
     @Override

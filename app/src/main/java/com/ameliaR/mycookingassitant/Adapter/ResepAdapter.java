@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> {
     private ArrayList<Resep> listResep;
+    private onResepListener listener;
 
     public ResepAdapter(ArrayList<Resep> listResep) {
         this.listResep = listResep;
@@ -47,6 +48,10 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> 
         return listResep.size();
     }
 
+    public interface onResepListener{
+        void resepListener(int index, Resep item);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView fotoResep;
         TextView tvNama;
@@ -58,5 +63,15 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> 
             tvNama = itemView.findViewById(R.id.tv_resep_name);
             tvDetail = itemView.findViewById(R.id.tv_resep_detail);
         }
+
+        public void bind(final int index, final Resep item){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.resepListener(index, item);
+                }
+            });
+        }
+
     }
 }
