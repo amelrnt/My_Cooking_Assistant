@@ -21,7 +21,6 @@ public class DetailActivity extends AppCompatActivity {
         tvnama = findViewById(R.id.tv_nama_detail);
         tvBahan = findViewById(R.id.tv_bahan);
 
-
         Bundle extras = getIntent().getExtras();
         if (extras!=null){
             int foto = extras.getInt(MainActivity.FOTO_KEY);
