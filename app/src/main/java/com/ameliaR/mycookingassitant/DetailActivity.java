@@ -7,10 +7,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.skydoves.transformationlayout.TransformationAppCompatActivity;
 import com.skydoves.transformationlayout.TransformationLayout;
 import com.skydoves.transformationlayout.TransitionExtensionKt;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends TransformationAppCompatActivity {
     private ImageView imageMakanan;
     private TextView tvnama;
     private TextView tvBahan;

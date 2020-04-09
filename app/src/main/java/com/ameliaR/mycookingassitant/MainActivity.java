@@ -26,7 +26,7 @@ import com.skydoves.transformationlayout.TransitionExtensionKt;
 
 import java.util.ArrayList;
 
-public class MainActivity extends TransformationAppCompatActivity implements KategoriAdapter.onKategoriListener , ResepAdapter.onResepListener{
+public class MainActivity extends AppCompatActivity implements KategoriAdapter.onKategoriListener , ResepAdapter.onResepListener{
     private RecyclerView rvKategori;
     private RecyclerView rvResep;
     private ArrayList<Kategori> listKategori = new ArrayList<>();
@@ -99,11 +99,12 @@ public class MainActivity extends TransformationAppCompatActivity implements Kat
         TransformationLayout transformationLayout = findViewById(R.id.transformationLayout);
         Bundle bundle = transformationLayout.withContext(this, "myTransitionName");
         Intent intent = new Intent(this , DetailActivity.class);
+        intent.putExtra("TransformationParams", transformationLayout.getParcelableParams());
         intent.putExtra(NAMA_KEY, item.getNama());
         intent.putExtra(FOTO_KEY, item.getFoto());
         intent.putExtra(BAHAN_KEY,item.getBahan());
-        //startActivity(intent,bundle);
-        TransformationCompat.INSTANCE.startActivity(transformationLayout, intent);
+        startActivity(intent,bundle);
+        //TransformationCompat.INSTANCE.startActivity(transformationLayout, intent);
     }
 
 }

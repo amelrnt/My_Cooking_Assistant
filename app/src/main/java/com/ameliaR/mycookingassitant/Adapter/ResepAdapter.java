@@ -33,6 +33,7 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         Resep resep = listResep.get(position);
 
         Glide.with(holder.itemView.getContext())
@@ -47,6 +48,7 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> 
     public int getItemCount() {
         return listResep.size();
     }
+
 
     public interface onResepListener{
         void resepListener(int index, Resep item);
