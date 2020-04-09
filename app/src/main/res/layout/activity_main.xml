@@ -21,8 +21,17 @@
         android:layout_height="wrap_content"
         android:text="Ini Pembatas" />
 
+    <com.skydoves.transformationlayout.TransformationLayout
+        android:id="@+id/transformationLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:transformation_duration="550">
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layoutAnimation="@anim/layout_animation"
         android:layout_width="match_parent"
         android:layout_height="557dp"
         android:id="@+id/rv_resep"/>
+
+    </com.skydoves.transformationlayout.TransformationLayout>
 </LinearLayout>

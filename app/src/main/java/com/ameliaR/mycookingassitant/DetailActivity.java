@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.skydoves.transformationlayout.TransformationLayout;
+import com.skydoves.transformationlayout.TransitionExtensionKt;
 
 public class DetailActivity extends AppCompatActivity {
     private ImageView imageMakanan;
@@ -15,6 +17,8 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TransformationLayout.Params params = getIntent().getParcelableExtra("myTransitionName");
+        TransitionExtensionKt.onTransformationEndContainer(this, params);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         imageMakanan = findViewById(R.id.image_detail);
