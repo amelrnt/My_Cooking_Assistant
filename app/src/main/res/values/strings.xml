@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Cooking Assistant</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="toDetail">toDetail</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

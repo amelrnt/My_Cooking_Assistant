@@ -12,51 +12,58 @@
         android:orientation="vertical" >
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_detail"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content"
+            android:background="@color/smothpink"
+            android:transitionName="@string/toDetail">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_detail"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="7dp"
+                android:src="@android:color/darker_gray" />
 
-                <ImageView
-                    android:id="@+id/image_detail"
-                    android:layout_width="166dp"
-                    android:layout_height="82dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/aglio" />
+
+            <LinearLayout
+                android:layout_width="324dp"
+                android:layout_height="65dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/photo_resep"
+                android:orientation="vertical"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="60dp">
 
                 <TextView
                     android:id="@+id/tv_nama_detail"
-                    android:layout_width="88dp"
-                    android:layout_height="25dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="67dp"
-                    android:layout_marginLeft="67dp"
-                    android:layout_marginEnd="118dp"
-                    android:layout_marginRight="118dp"
-                    android:layout_marginBottom="38dp"
-                    android:layout_toEndOf="@+id/image_detail"
-                    android:layout_toRightOf="@+id/image_detail"
-                    android:text="aaaaaaaaaaa" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Nama"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_detail_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Detail" />
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Bahan Dibutuhkan"
-            android:background="@color/colorAccent"/>
+            android:background="@color/textbg"/>
 
         <TextView
             android:id="@+id/tv_bahan"
@@ -70,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="Langkah Langkah"
-            android:background="@color/colorAccent"/>
+            android:background="@color/textbg"/>
 
         <TextView
             android:id="@+id/tv_cara"

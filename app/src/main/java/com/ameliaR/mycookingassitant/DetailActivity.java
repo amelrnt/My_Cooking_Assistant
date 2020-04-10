@@ -7,19 +7,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.skydoves.transformationlayout.TransformationAppCompatActivity;
-import com.skydoves.transformationlayout.TransformationLayout;
-import com.skydoves.transformationlayout.TransitionExtensionKt;
 
-public class DetailActivity extends TransformationAppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
     private ImageView imageMakanan;
     private TextView tvnama;
     private TextView tvBahan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TransformationLayout.Params params = getIntent().getParcelableExtra("myTransitionName");
-        TransitionExtensionKt.onTransformationEndContainer(this, params);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         imageMakanan = findViewById(R.id.image_detail);
@@ -40,5 +35,11 @@ public class DetailActivity extends TransformationAppCompatActivity {
             tvBahan.setText(bahan);
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAfterTransition();
     }
 }
