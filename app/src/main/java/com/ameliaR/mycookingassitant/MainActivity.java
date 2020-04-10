@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 
-
 import com.ameliaR.mycookingassitant.Adapter.KategoriAdapter;
 import com.ameliaR.mycookingassitant.Adapter.ResepAdapter;
 import com.ameliaR.mycookingassitant.Model.DataKategori;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
     public static final String NAMA_KEY = "NASI";
     public static final String BAHAN_KEY = "SAOS";
     public static final String FOTO_KEY = "1";
+    public static final String CARA_KEY = "MASAK";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
 
         listResep.addAll(DataResep.getMakanan());
         rvResep.setLayoutManager(new LinearLayoutManager(this));
-        ResepAdapter listResepAdapter = new ResepAdapter(listResep);
+        ResepAdapter listResepAdapter = new ResepAdapter(listResep, this);
         rvResep.setAdapter(listResepAdapter);
     }
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
 
         listResep.addAll(DataResep.getMinuman());
         rvResep.setLayoutManager(new LinearLayoutManager(this));
-        ResepAdapter listResepAdapter = new ResepAdapter(listResep);
+        ResepAdapter listResepAdapter = new ResepAdapter(listResep, this);
         rvResep.setAdapter(listResepAdapter);
     }
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
 
         listResep.addAll(DataResep.getSnack());
         rvResep.setLayoutManager(new LinearLayoutManager(this));
-        ResepAdapter listResepAdapter = new ResepAdapter(listResep);
+        ResepAdapter listResepAdapter = new ResepAdapter(listResep, this);
         rvResep.setAdapter(listResepAdapter);
     }
 
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements KategoriAdapter.o
         intent.putExtra(NAMA_KEY, item.getNama());
         intent.putExtra(FOTO_KEY, item.getFoto());
         intent.putExtra(BAHAN_KEY,item.getBahan());
+        intent.putExtra(CARA_KEY, item.getCara());
         startActivity(intent,options.toBundle());
     }
 

@@ -20,8 +20,9 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> 
     private ArrayList<Resep> listResep;
     private onResepListener listener;
 
-    public ResepAdapter(ArrayList<Resep> listResep) {
+    public ResepAdapter(ArrayList<Resep> listResep, onResepListener listener) {
         this.listResep = listResep;
+        this.listener = listener;
     }
 
     @NonNull
